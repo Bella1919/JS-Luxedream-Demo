@@ -1,0 +1,95 @@
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Vanila JavaScript Demo</title>
+	<!-- 商业项目不用stlesheet,商业项目需要下载到本地。这个项目里的class基本都是bootstrap -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+		integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+		integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+		crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+		integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+		crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+		integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+		crossorigin="anonymous"></script>
+</head>
+<body style="width: 100%;">
+	<nav class="navbar navbar-dark bg-dark" style="padding-left: 5%;">
+		<h1 class="navbar-brand">Luxedream JavaScript Demo</h1>
+	</nav>
+	<!-- css优先级和选择器需要熟练 -->
+	<main class="mt-3" style="width: 88%; margin: 0 auto">
+		<div class="row text-left" style="padding: 0;">
+			<!-- Category -->
+			<div class="col-12 col-xl-4 my-1" style="padding: 0">
+				<span style="width: 80px; display: inline-block;">
+					<b>Category</b>
+				</span>
+				<select id="category" class="form-control" style="width: 50%; display: inline-block; vertical-align:middle;">
+					<!-- <option value="0">All Hires</option> -->
+					<!-- <option value="1">ARCHES & BALLOON/FLOWER STANDS</option>
+					<option value="2">CARTS</option>
+					<option value="3">PARTY HIRE</option>
+					<option value="5">TABLEWARE</option>
+					<option value="25">LED LETTER & NUMBER LIGHTS</option>
+					<option value="11">CENTREPIECE HIRE - CANDLES & VASES</option>
+					<option value="15">BACKDROPS & FLOWER WALLS</option>
+					<option value="21">CAKE & DESSERT STANDS</option>
+					<option value="18">TABLES & CONSOLES</option>
+					<option value="12">PLINTHS</option>
+					<option value="27">TABLECLOTHS</option>
+					<option value="16">CHAIRS</option>
+					<option value="20">WOODEN CRATES</option>
+					<option value="51">MIRRORS</option>
+					<option value="14">WEDDING HIRE</option>
+					<option value="10">BABY SHOWER</option>
+					<option value="47">Luxe Dream Wedding Flowers</option>
+					<option value="49">Luxe Dream Floral Studio</option> -->
+				</select>
+				<button class="btn btn-info" onclick="getProducts()">
+					Show
+				</button>
+			</div>
+
+			<!-- Price -->
+			<div class="col-12 col-xl-4 my-1" style="padding: 0">
+				<span style="width: 80px; display: inline-block;"><b>Price</b></span>
+				<select id="price" class="form-control" style="width: 36%; display: inline-block; vertical-align:middle;">
+					<option value="0">All</option>
+					<option value="100">0 - 100</option>
+					<option value="500">101 - 500</option>
+					<option value="1000">501 - 1000</option>
+					<option value="1001">> 1000</option>
+				</select>
+				<button class="btn btn-info" onclick="filterPrice()">
+					Filter
+				</button>
+			</div>
+
+			<!-- Order -->
+			<div class="col-12 col-xl-4 my-1" style="padding: 0; vertical-align:middle">
+				<span style="width: 80px; display: inline-block;">
+					<b>Sort</b>
+				</span>
+				<button class="btn btn-info" onclick="lowtohigh()">
+					Ascending
+				</button>
+				<button class="btn btn-info" onclick="hightolow()">
+					Decending
+				</button>
+			</div>
+		</div>
+		<!-- overflow-y :auto 是屏幕侧边的滚动轴-->
+		<div style="padding: 20px 2px 10px 30px; border: 0.5px solid #c2c2c2; border-radius: 5px; max-height: 700px; overflow-y: auto;" class="mt-3">
+			<div class="row w-100" id="display"></div>
+			<hr>
+		</div>
+	</main>
+
+	<script type="text/javascript" src="./Model.js"></script>
+	<script type="text/javascript" src="./ViewModel.js"></script>
+</body>
+</html>
